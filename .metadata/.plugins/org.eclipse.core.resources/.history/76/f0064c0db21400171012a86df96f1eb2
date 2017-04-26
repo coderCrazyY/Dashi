@@ -1,0 +1,20 @@
+package OOD1;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] numOfSpotType = {{3, 2}};
+		ParkingLot newLot = new ParkingLot(1, numOfSpotType);
+		Vehicle v1 = new Truck();
+		boolean success1 = newLot.park(v1);
+		System.out.println(success1);
+		Vehicle v2 = new Truck();
+		boolean success2 = newLot.park(v2);
+		System.out.println(success2);
+		Vehicle v3 = new Truck();
+		boolean success3 = newLot.park(v3);
+		System.out.println(success3);
+	}
+
+}

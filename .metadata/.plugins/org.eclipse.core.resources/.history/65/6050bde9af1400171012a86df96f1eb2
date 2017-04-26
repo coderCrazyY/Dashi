@@ -1,0 +1,15 @@
+package OOD1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int numOfLevels = 1;
+		int[][] numOfSpotType = {{2, 3}};
+		ParkingLot newLot = new ParkingLot(1, numOfSpotType);
+	}
+
+}

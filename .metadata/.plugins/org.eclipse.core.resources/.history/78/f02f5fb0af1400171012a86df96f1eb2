@@ -1,0 +1,9 @@
+package OOD1;
+
+public class Car extends Vehicle{
+	@Override
+	VehicleSize getSize() {
+		return VehicleSize.Compact;
+	}
+
+}

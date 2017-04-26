@@ -1,0 +1,17 @@
+package ShapeFactory;
+
+public class Application {
+	// field
+	private final ShapeFactory factory;
+	
+	// constructor
+	Application (ShapeFactory factory) {
+		this.factory = factory;
+	}
+	
+	// method
+	void run(ShapeFactory factory) {
+		Shape shape = factory.createShape();
+		shape.draw();
+	}
+}

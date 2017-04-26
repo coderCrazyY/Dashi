@@ -1,0 +1,11 @@
+package ShapeFactory;
+
+public class RectangleFactory implements Shape {
+
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

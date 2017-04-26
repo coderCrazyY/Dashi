@@ -1,0 +1,5 @@
+package OOD1;
+
+public abstract class Vehicle {
+
+}

@@ -1,0 +1,17 @@
+package OOD1;
+
+public class main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] numOfSpotType = {{2, 3}};
+		ParkingLot newLot = new ParkingLot(1, numOfSpotType);
+		Vehicle v1 = new Car();
+		newLot.park(v1);
+		Vehicle v2 = new Car();
+		newLot.park(v2);
+		Vehicle v3 = new Car();
+		newLot.park(v3);
+	}
+
+}

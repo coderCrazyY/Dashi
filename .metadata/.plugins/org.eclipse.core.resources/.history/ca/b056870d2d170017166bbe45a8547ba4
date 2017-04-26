@@ -1,0 +1,16 @@
+package ShapeFactory;
+
+public class Rectangle implements Shape {
+	private double length;
+	private double height;
+	Rectangle(double length, double height) {
+		this.length = length;
+		this.height = height;
+	}
+	@Override
+	public void draw() {
+		System.out.println("Inside Rectangle::draw() method. length is" + length + ", and height is" + height + ".");
+
+	}
+
+}

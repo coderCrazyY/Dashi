@@ -1,0 +1,71 @@
+package laicode;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class laicode {
+	
+	public laicode () {
+		List<Integer> res = Solution.allAnagrams("aa","baaaa");
+		System.out.println(res.toString());
+	}
+
+	private static class Solution {
+		  static List<Integer> allAnagrams(String s, String l) {
+		    // Write your solution here.
+		    List<Integer> res = new ArrayList<Integer>();
+		    Map<Character, Integer> map = mapString(s);
+		    // we will keep a sliding window of same size, so only need one index end
+		    int end = 0;
+		    // record how many matched characters we found
+		    int match = 0;
+		    for (end = 0; end < l.length(); end++) {
+		      char ch = l.charAt(end);
+		      Integer count = map.get(ch);
+		      // operate on left end
+		      // if ch is in the map, count can not be null, then we update map to be count - 1
+		      if (count != null) {
+		        map.put(ch, count - 1);
+		        // if count is originally 1, after deduction it will become 0, 
+		        // which means we have one character that has meet requirement
+		        if (count == 1) {
+		          match++;
+		        }
+		      }
+		      
+		      // if end is larger than or equal to s.length(), we need to operate on right end
+		      if (end >= s.length()) {
+		        ch = l.charAt(end - s.length());
+		        count = map.get(ch);
+		        if (count != null) {
+		          map.put(ch, count + 1);
+		          if (count == 0) {
+		            match--;
+		          }
+		        }
+		      }
+		      
+		      if (match == s.length()) {
+		        res.add(end - s.length() + 1);
+		      }
+		    }
+		    
+		    return res;
+		  }
+		  
+		  private static Map<Character, Integer> mapString(String s) {
+		    Map<Character, Integer> map = new HashMap<Character, Integer>();
+		    for (char c : s.toCharArray()) {
+		      Integer count = map.get(c);
+		      if (count != null) {
+		        map.put(c, count + 1);
+		      } else {
+		        map.put(c, 1);
+		      }
+		    }
+		    return map;
+		  }
+		}
+}
